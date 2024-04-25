@@ -1,0 +1,23 @@
+main teal: #0D9C90
+college loops yellow: #FDD946
+darker teal: #0C6B68
+very dark blue: #003046
+off-black: #1A1918
+
+for gradient:
+red: #FEEFEE 
+orange: #FFF3E8
+yellow: #FFF9E2
+teal: #D7F9F4
+blue: #E5F8FF
+
+typography:
+ROBOTO ( PRIMARY )
+The primary typeface for the Girls Who Code
+visual system is Roboto. All key information
+including headlines, sub-heads, and body copy,
+should be set exclusively in Roboto. 
+
+ROBOTO MONO ( SECONDARY )
+Secondary information, including dates, times,
+and locations should be set in Roboto Mono

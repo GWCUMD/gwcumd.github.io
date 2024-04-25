@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+  <script src="index.js"></script>
+  <title>Girls Who Code</title>
+</head>
+
+<body>
+  <nav>
+    <div id="header"></div>
+  </nav>
+
+  <div class="background-image">
+    <img src=" ./gwc_pic_compressed.jpg" alt="a picture of the Girls Who Code chapter members at UMD" width="100%"
+      class="opacity" />
+    <div class="gwc-title gwc-title-1" id="t1">GIRLS</div>
+    <div class="gwc-title gwc-title-2" id="t2">WHO</div>
+    <div class="gwc-title gwc-title-3" id="t3">CODE</div>
+    <div class="gwc-title gwc-title-4" id="t4">AT</div>
+    <div class="gwc-title gwc-title-5" id="t5">UMD</div>
+    <div class="gradient-blob"></div>
+
+  </div>
+
+  <!-- testing a flexbox container for text instead to have mobile responsiveness-->
+
+  <div class="body-container">
+    <div class="text-flexbox">
+      <div class="text-heading" id="gwc-header">
+        <h1>Girls Who Code</h1>
+        <img src="wavy line 2.png" alt="wavy decoration line" class="wavyline">
+      </div>
+
+      <div class="text-body">
+        <h3>
+          The Girls Who Code chapter at UMD is committed to promoting gender equality within computer science education.
+        </h3>
+        <p>
+          With each line of code, we strive to bridge the gap and create a more inclusive tech industry. At Girls Who
+          Code,
+          we believe that anyone can learn to code, regardless of their background or prior experience. We welcome all
+          young
+          women to join our community, regardless of their skill level, and provide a supportive environment where
+          beginners
+          can thrive and experienced coders can enhance their skills.
+        </p>
+      </div>
+    </div>
+
+  </div>
+  <div id="footer"></div>
+
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+    });
+  </script>
+
+
+</body>
+
+</html>
