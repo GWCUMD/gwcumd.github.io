@@ -100,25 +100,31 @@ jQuery(function ($) {
   $("#testQuestion").on("click", "#submit", function () {
     var answer = $("input:radio[name=guess]:checked").val();
     var correctAnswer = questions[questionNum].correct;
+  
     if (answer == null) {
-      //if no answer was selected
       $("#message").html("<p>Please select an answer.</p>");
-    } else if (answer == correctAnswer) {
-      //if correct answer was selected
-      $("#message").html(
-        "<p>Correct!</p><input id='continue' class='button' type='submit' value='Continue'>"
-      );
-      correctTotal++;
     } else {
-      //wrong answer selected
-      $("#message").html(
-        "<p>Wrong! The correct answer is:<br>" +
-          questions[questionNum].choices[correctAnswer] +
-          "</p><input id='continue' class='button' type='submit' value='Continue'>"
-      );
+      // disable all choices and the submit button
+      $("input:radio[name=guess]").prop("disabled", true);
+      $("#submit").prop("disabled", true);
+  
+      if (answer == correctAnswer) {
+        $("#message").html(
+          "<p>Correct!</p><input id='continue' class='button' type='submit' value='Continue'>"
+        );
+        correctTotal++;
+      } else {
+        $("#message").html(
+          "<p>Wrong! The correct answer is:<br>" +
+            questions[questionNum].choices[correctAnswer] +
+            "</p><input id='continue' class='button' type='submit' value='Continue'>"
+        );
+      }
     }
+  
     $("#message").show();
   });
+  
 
   $("#message").on("click", "#continue", function () {
     if (questionNum + 1 == questionTotal) {
@@ -143,15 +149,19 @@ jQuery(function ($) {
   });
 
   function questionDisplay() {
-    //displays the current question
+    // reset and re-enable inputs
+    $("#message").hide();
+    $("#choices").empty();
+    $("input:radio[name=guess]").prop("disabled", false);
+    $("#submit").prop("disabled", false);
+  
     $("#questionNum").text(
       "Question " + (questionNum + 1) + " of " + questionTotal
     );
     $("#question").text(questions[questionNum].question);
-    $("#choices").empty();
+  
     var choiceTotal = questions[questionNum].choices.length;
     for (var i = 0; i < choiceTotal; i++) {
-      //displays the answer choices
       $("#choices").append(
         "<input type='radio' class='guess' name='guess' value=" +
           i +
@@ -165,4 +175,5 @@ jQuery(function ($) {
       );
     }
   }
+  
 });
